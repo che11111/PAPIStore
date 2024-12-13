@@ -1,0 +1,32 @@
+#仅支持MySQL数据库
+mysql:
+  user: root
+  password: "PleaseInput"
+  address: 127.0.0.1
+  port: 3306
+  useSSL: false
+  database: "minecraft"
+  table: "papi_mysql"
+  allowPublicKeyRetrieval: true
+
+message:
+  no-permission: "&c你没有权限执行此指令."
+  only-player: "&c此命令不可在控制台执行."
+  refresh-own-usage: "&3Usage: &b/papistore refresh"
+  refresh-own-begin: "&6已开始刷新个人数据..."
+  refresh-own-done: "&a个人数据已刷新!"
+  admin-command-usage: |
+    &8-&3 /papistore refresh
+    &8-&3 /papistore refresh <玩家>
+    &8-&3 /papistore create <PAPI变量> <列名>
+    &8-&3 /papistore generate <列名/all>
+  refresh-other-error: "&c玩家 %player% 不存在."
+  refresh-other-begin: "&6已开始刷新 %player% 的玩家数据..."
+  refresh-other-done: "&a%player% 的玩家数据已刷新!"
+  create-begin: "&6正在创建一个新的列 %option% (%papi%) ..."
+  create-done: "&a列 %option% (%papi%) 已创建完毕!"
+  generate-option-error: "&c指定的列 %option% 不存在."
+  generate-option-begin: "&6正在生成 %option% 的所有在线玩家数据..."
+  generate-option-done: "&a%option% 的所有在线玩家数据已生成完毕!"
+  generate-all-begin: "&6正在生成所有列的所有在线玩家数据..."
+  generate-all-done: "&a所有列的所有在线玩家数据已生成完毕!"

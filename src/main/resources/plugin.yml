@@ -1,0 +1,18 @@
+name: PAPIStore
+version: '${project.version}'
+main: cn.che1sbukkit.papistore.papistore
+api-version: '1.13'
+author: che1s
+depend: [ PlaceholderAPI ]
+
+commands:
+  papistore:
+    description: Main command.
+
+permissions:
+  papistore.refresh:
+    description: 刷新自己papi数据的权限.
+    default: true
+  papistore.op:
+    description: 管理员权限.
+    default: op

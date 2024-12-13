@@ -8,7 +8,7 @@ It can store the corresponding PAPI variables of players in the database.
 
 Whenever a player logs in, the data will be refreshed once.
 
-The data in the database can be used for inquiries by QQ group robots, website inquiries about player data information, etc.
+The data in the database can be used for inquiries by Discord robots, website inquiries about player data information, etc.
 
 For example, the data that can be collected using this plugin (MySQL):
 
@@ -17,7 +17,7 @@ For example, the data that can be collected using this plugin (MySQL):
 | Steve     | 100    | 15 | 9 | 5 |
 | Alex  | 234       | 12 | 10 | 3 |
 
-[中文介绍](README-zh.md)
+[Chinese introduction](README-zh.md)
 
 ## Dependent Plugins
 

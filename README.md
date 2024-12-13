@@ -1,8 +1,6 @@
 # PAPIStore
 
-![PAPIStore](logo.png)
-
-<img src="logo.png" width="50" height="200" alt="image">
+<img src="logo.png" width="300" height="300" alt="image">
 
 ### Plugin Function
 

@@ -15,6 +15,13 @@
 | Alex  | 234       | 12 | 10 | 3 |
 
 
+### 依赖插件
+
+PlaceholderAPI 
+
+https://github.com/PlaceholderAPI/PlaceholderAPI
+
+
 ### 可用指令 
 
 

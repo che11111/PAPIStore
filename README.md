@@ -1,3 +1,7 @@
+# PAPIStore
+
+[PAPIStore](logo.png)
+
 ### Plugin Function
 
 It can store the corresponding PAPI variables of players in the database.

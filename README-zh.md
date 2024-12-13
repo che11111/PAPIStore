@@ -1,5 +1,8 @@
+# PAPIStore
 
-### 插件作用
+<img src="logo.png" width="300" height="300" alt="image">
+
+## 插件作用
 
 可以将玩家对应的 PAPI变量 储存在数据库中
 
@@ -15,14 +18,14 @@
 | Alex  | 234       | 12 | 10 | 3 |
 
 
-### 依赖插件
+## 依赖插件
 
 PlaceholderAPI 
 
 https://github.com/PlaceholderAPI/PlaceholderAPI
 
 
-### 可用指令 
+## 可用指令 
 
 
 1、玩家在线时，刷新自己的所有数据的指令
@@ -57,7 +60,7 @@ https://github.com/PlaceholderAPI/PlaceholderAPI
 
 ```
 
-### 数据库配置
+## 数据库配置
 
 仅支持MySQL数据库
 配置项如下：

@@ -1,6 +1,6 @@
 # PAPIStore
 
-[PAPIStore](logo.png)
+![PAPIStore](logo.png)
 
 ### Plugin Function
 

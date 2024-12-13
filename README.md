@@ -2,7 +2,7 @@
 
 <img src="logo.png" width="300" height="300" alt="image">
 
-### Plugin Function
+## Plugin Function
 
 It can store the corresponding PAPI variables of players in the database.
 
@@ -19,14 +19,14 @@ For example, the data that can be collected using this plugin (MySQL):
 
 [中文介绍](README-zh.md)
 
-### Dependent Plugins
+## Dependent Plugins
 
 PlaceholderAPI 
 
 https://github.com/PlaceholderAPI/PlaceholderAPI
 
 
-### Available Commands
+## Available Commands
 
 1. The command to refresh all of one's own data when the player is online:
 ```
@@ -59,7 +59,7 @@ Permission: papimysql.op
 Example: /papimysql generate money
 ```
 
-### Database Configuration
+## Database Configuration
 
 Only MySQL database is supported.
 The configuration items are as follows:

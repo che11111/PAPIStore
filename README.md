@@ -17,7 +17,6 @@ For example, the data that can be collected using this plugin (MySQL):
 | Steve     | 100    | 15 | 9 | 5 |
 | Alex  | 234       | 12 | 10 | 3 |
 
-[Chinese introduction](README-zh.md)
 
 ## Dependent Plugins
 

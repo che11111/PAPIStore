@@ -30,33 +30,33 @@ https://github.com/PlaceholderAPI/PlaceholderAPI
 
 1. The command to refresh all of one's own data when the player is online:
 ```
-/papimysql refresh
+/papistore refresh
 
-Permission: papimysql.refresh
+Permission: papistore.refresh
 ```
 2. The command for administrators to refresh a certain player's data:
 ```
-/papimysql refresh <player>
+/papistore refresh <player>
 
-Permission: papimysql.op
+Permission: papistore.op
 
-Example: /papimysql refresh Steve
+Example: /papistore refresh Steve
 ```
 3. The command for administrators to create a PAPI record column:
 ```
-/papimysql create <PAPI variable> <column name>
+/papistore create <PAPI variable> <column name>
 
-Permission: papimysql.op
+Permission: papistore.op
 
-Example: /papimysql create %vault_eco_balance% money
+Example: /papistore create %vault_eco_balance% money
 ```
 4. The command for administrators to generate data for all players in a certain column:
 ```
-/papimysql generate <column name>
+/papistore generate <column name>
 
-Permission: papimysql.op
+Permission: papistore.op
 
-Example: /papimysql generate money
+Example: /papistore generate money
 ```
 
 ## Database Configuration

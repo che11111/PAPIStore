@@ -29,6 +29,7 @@ public final class JDBCUtil {
      * 初始化数据库连接配置
      * 该方法从插件配置文件中读取 MySQL 数据库的连接信息，并将其存储在类的静态变量中
      */
+
     public static void init() {
         // 从 papistore 插件的配置文件中获取名为 "mysql" 的配置节
         ConfigurationSection mysql = papistore.instance.getConfig().getConfigurationSection("mysql");

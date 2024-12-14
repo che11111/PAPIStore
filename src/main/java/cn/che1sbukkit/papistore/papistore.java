@@ -12,7 +12,7 @@ import java.util.Map;
 //    注释使用 MarsCodeAI 生成
 
 
-public final class papistore
+public final class  papistore
  extends JavaPlugin {
     public static papistore
  instance;

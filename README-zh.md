@@ -30,33 +30,33 @@ https://github.com/PlaceholderAPI/PlaceholderAPI
 
 1、玩家在线时，刷新自己的所有数据的指令
 ```
-/papimysql refresh
+/papistore refresh
 
-权限：papimysql.refresh
+权限：papistore.refresh
 ```
 2、管理员刷新某玩家数据的指令
 ```
-/papimysql refresh <玩家>
+/papistore refresh <玩家>
 
-权限：papimysql.op
+权限：papistore.op
 
-举例：/papimysql  refresh  Steve
+举例：/papistore  refresh  Steve
 ```
 3、管理员创建一个papi记录列
 ```
-/papimysql create <PAPI变量> <列名>
+/papistore create <PAPI变量> <列名>
 
-权限：papimysql.op
+权限：papistore.op
 
-举例：/papimysql  create  %vault_eco_balance%  money
+举例：/papistore  create  %vault_eco_balance%  money
 ```
 4、管理员生成某一列的所有玩家的数据
 ```
-/papimysql generate <列名>
+/papistore generate <列名>
 
-权限：papimysql.op
+权限：papistore.op
 
-举例：/papimysql  generate  money
+举例：/papistore  generate  money
 
 ```
 

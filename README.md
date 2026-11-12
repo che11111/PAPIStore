@@ -1,7 +1,7 @@
 # PAPIStore
 
 <p align="center">
-  <img src="PAPIStore.png" width="200" height="200" alt="PAPIStore logo">
+  <img src="PAPIStore.png" width="128" height="128" alt="PAPIStore logo">
 </p>
 
 <p align="center">

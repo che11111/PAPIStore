@@ -1,7 +1,7 @@
 # PAPIStore
 
 <p align="center">
-  <img src="https://github.com/che11111/PAPIStore/blob/main/PAPIStore.png?raw=true" width="200" height="200" alt="PAPIStore logo">
+  <img src="https://github.com/che11111/PAPIStore/blob/main/PAPIStore.png?raw=true" width="128" height="128" alt="PAPIStore logo">
 </p>
 
 <p align="center">

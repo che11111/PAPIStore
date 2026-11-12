@@ -48,3 +48,8 @@ player-query:
   # 是否启用 /mydata 快捷指令；关闭后该指令会提示功能已禁用。
   # Whether to enable the /mydata shortcut for /papistore me.
   enable-mydata: true
+
+bstats:
+  # 是否启用匿名 bStats 使用统计；同时遵循 plugins/bStats/config.yml 的全局开关。
+  # Whether to enable anonymous bStats metrics; the global plugins/bStats/config.yml switch also applies.
+  enabled: true

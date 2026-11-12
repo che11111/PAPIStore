@@ -2,6 +2,7 @@ package dev.che1s.papistore;
 
 import dev.che1s.papistore.command.MainCommand;
 import dev.che1s.papistore.listener.JoinQuitListener;
+import dev.che1s.papistore.metrics.MetricsService;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -31,6 +32,7 @@ public final class PapiStorePlugin extends JavaPlugin {
     private PlatformScheduler scheduler;
     private PlayerDataService playerData;
     private PlayerRefreshService refreshService;
+    private MetricsService metricsService;
     private final AtomicBoolean databaseCleanupStarted = new AtomicBoolean();
     private volatile boolean startupFailed;
 
@@ -128,6 +130,8 @@ public final class PapiStorePlugin extends JavaPlugin {
                     databaseSettings,
                     getLogger()
             );
+            metricsService = new MetricsService(this, scheduler);
+            metricsService.reload();
         } catch (IllegalStateException exception) {
             failStartup(exception.getMessage(), exception);
             return;
@@ -158,6 +162,9 @@ public final class PapiStorePlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        if (metricsService != null) {
+            metricsService.shutdown();
+        }
         if (migrationService != null) {
             migrationService.close();
         }
@@ -247,6 +254,7 @@ public final class PapiStorePlugin extends JavaPlugin {
                             + "to apply them"
             );
         }
+        metricsService.reload();
         return playerData.reloadFields(new File(getDataFolder(), "fields.yml"));
     }
 

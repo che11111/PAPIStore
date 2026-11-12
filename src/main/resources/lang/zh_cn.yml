@@ -1,0 +1,76 @@
+no-permission: "&c你没有权限执行此命令。"
+only-player: "&c此命令只能由玩家执行。"
+refresh-own-usage: "&3用法：&b/papistore refresh"
+refresh-own-begin: "&6正在刷新你的数据..."
+refresh-own-done: "&a你的数据已刷新。"
+refresh-failed: "&c刷新数据失败，请查看服务器控制台。"
+refresh-cooldown: "&e请等待 %seconds% 秒后再刷新。"
+admin-command-usage: |
+  &8-&3 /papistore refresh
+  &8-&3 /papistore refresh <玩家>
+  &8-&3 /papistore create <PAPI变量> <列名> <备注名>
+  &8-&3 /papistore generate <列名/all>
+  &8-&3 /papistore query <玩家/UUID>
+  &8-&3 /papistore me
+  &8-&3 /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]
+  &8-&3 /papistore reload
+  &8-&3 /papistore help
+refresh-other-error: "&c玩家 %player% 不在线。"
+refresh-other-begin: "&6正在刷新玩家 %player% 的数据..."
+refresh-other-done: "&a玩家 %player% 的数据已刷新。"
+refresh-other-failed: "&c刷新玩家 %player% 的数据失败，请查看服务器控制台。"
+create-begin: "&6正在创建列 %option% (%papi%)..."
+create-done: "&a列 %option% (%papi%) 已创建。"
+create-failed: "&c创建列 %option% 失败，请查看服务器控制台。"
+create-invalid-option: "&c列名无效。只能使用字母、数字和下划线，且必须以字母或下划线开头。"
+create-invalid-name: "&c备注名长度必须为 1 到 64 个字符。"
+generate-option-error: "&c列 %option% 不存在。"
+generate-option-begin: "&6正在为所有在线玩家生成列 %option% 的数据..."
+generate-option-done: "&a列 %option% 的数据已生成完毕。"
+generate-option-failed: "&c生成列 %option% 的数据失败，请查看服务器控制台。"
+generate-all-begin: "&6正在为所有在线玩家生成全部字段的数据..."
+generate-all-done: "&a所有玩家数据已生成完毕。"
+generate-all-failed: "&c生成所有玩家数据失败，请查看服务器控制台。"
+query-not-found: "&c未找到玩家 %player% 的已存储 PAPI 数据。"
+query-failed: "&c查询玩家数据失败，请查看服务器控制台。"
+query-header: "&6玩家 %player% 的已存储数据"
+query-uuid: "&7UUID：&f%uuid%"
+query-updated: "&7更新时间：&f%updated%"
+query-entry: "&e%field%：&f%value%"
+query-empty: "&7没有配置任何数据字段。"
+help: |
+  &6&lPAPIStore 管理员帮助
+  &e/papistore help
+  &7显示本帮助页面。
+  &e/papistore refresh <玩家>
+  &7刷新指定在线玩家的已存储数据。权限：papistore.op
+  &e/papistore create <PAPI变量> <列名> <备注名>
+  &7创建数据库列并保存 PAPI 表达式。变量必须由 PAPI 核心或已安装的扩展提供。
+  &e/papistore generate <列名>
+  &7为所有在线玩家刷新指定字段。
+  &e/papistore generate all
+  &7为所有在线玩家刷新全部字段。
+  &e/papistore query <玩家名/UUID>
+  &7使用备注名显示玩家已存储的数据。权限：papistore.query 或 papistore.op
+  &e/papistore me
+  &7查询自己的已存储数据。权限：papistore.query.self
+  &e/mydata
+  &7/papistore me 的快捷指令，可在 config.yml 中分别开启或关闭。
+  &e/papistore migrate <源类型> <目标类型>
+  &7在 SQLite 和 MySQL 之间迁移全部数据。只有确认后才会清空目标库数据。
+  &e/papistore reload
+  &7重载 fields.yml、语言文件和玩家查询开关。数据库连接与调度参数仍需重启。
+migration-usage: "&c用法：/papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]"
+migration-target-data: "&e当前 %target% 里面有 %count% 条数据。继续迁移前会清空 %target% 数据，是否继续？"
+migration-confirm-usage: "&e确认迁移请执行：&b/papistore migrate %source% %target% confirm"
+migration-complete: "&a已迁移到 %target%，storage.type 已更新，请重启服务器。"
+migration-failed: "&c迁移失败。源数据和目标数据均未被部分覆盖，请查看服务器控制台。"
+migration-no-pending: "&c没有可确认的迁移，或 60 秒确认时间已过期。"
+reload-usage: "&c用法：/papistore reload"
+reload-begin: "&6正在重载字段、语言和玩家查询配置..."
+reload-done: "&a重载完成。数据库连接、队列和调度参数修改仍需重启服务器。"
+reload-failed: "&c重载失败。"
+query-self-usage: "&c用法：/papistore me"
+mydata-usage: "&c用法：/mydata"
+self-query-disabled: "&c服务器已关闭玩家自助查询指令。"
+failure-reason: "&c原因：&f%reason%"

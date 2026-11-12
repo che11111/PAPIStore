@@ -1,0 +1,76 @@
+no-permission: "&cYou do not have permission to use this command."
+only-player: "&cThis command can only be used by a player."
+refresh-own-usage: "&3Usage: &b/papistore refresh"
+refresh-own-begin: "&6Refreshing your stored data..."
+refresh-own-done: "&aYour stored data has been refreshed."
+refresh-failed: "&cCould not refresh your data. Check the server console."
+refresh-cooldown: "&ePlease wait %seconds% second(s) before refreshing again."
+admin-command-usage: |
+  &8-&3 /papistore refresh
+  &8-&3 /papistore refresh <player>
+  &8-&3 /papistore create <PAPI variable> <column> <display name>
+  &8-&3 /papistore generate <column/all>
+  &8-&3 /papistore query <player/uuid>
+  &8-&3 /papistore me
+  &8-&3 /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]
+  &8-&3 /papistore reload
+  &8-&3 /papistore help
+refresh-other-error: "&cPlayer %player% is not online."
+refresh-other-begin: "&6Refreshing stored data for %player%..."
+refresh-other-done: "&aStored data for %player% has been refreshed."
+refresh-other-failed: "&cCould not refresh data for %player%. Check the server console."
+create-begin: "&6Creating column %option% (%papi%)..."
+create-done: "&aColumn %option% (%papi%) has been created."
+create-failed: "&cCould not create column %option%. Check the server console."
+create-invalid-option: "&cInvalid column name. Use letters, numbers, and underscores, starting with a letter or underscore."
+create-invalid-name: "&cThe display name must contain between 1 and 64 characters."
+generate-option-error: "&cColumn %option% does not exist."
+generate-option-begin: "&6Generating data for all online players in column %option%..."
+generate-option-done: "&aFinished generating column %option%."
+generate-option-failed: "&cCould not generate data for column %option%. Check the server console."
+generate-all-begin: "&6Generating data for all online players and columns..."
+generate-all-done: "&aFinished generating all player data."
+generate-all-failed: "&cCould not generate all player data. Check the server console."
+query-not-found: "&cNo stored PAPI data was found for %player%."
+query-failed: "&cCould not query player data. Check the server console."
+query-header: "&6Stored data for %player%"
+query-uuid: "&7UUID: &f%uuid%"
+query-updated: "&7Updated: &f%updated%"
+query-entry: "&e%field%: &f%value%"
+query-empty: "&7No configured data fields."
+help: |
+  &6&lPAPIStore Administrator Help
+  &e/papistore help
+  &7Show this help page.
+  &e/papistore refresh <player>
+  &7Refresh stored data for an online player. Permission: papistore.op
+  &e/papistore create <PAPI variable> <column> <display name>
+  &7Create a database column and save its PAPI expression. The value must come from PAPI or an installed expansion.
+  &e/papistore generate <column>
+  &7Refresh one configured column for all online players.
+  &e/papistore generate all
+  &7Refresh every configured column for all online players.
+  &e/papistore query <player/uuid>
+  &7Show stored data using display names. Permission: papistore.query or papistore.op
+  &e/papistore me
+  &7Show your own stored data. Permission: papistore.query.self
+  &e/mydata
+  &7Shortcut for /papistore me. Each player command can be enabled separately in config.yml.
+  &e/papistore migrate <source> <target>
+  &7Copy all stored data between SQLite and MySQL. The target is cleared only after confirmation.
+  &e/papistore reload
+  &7Reload fields.yml, language files, and player-query switches. Database and scheduler settings still require a restart.
+migration-usage: "&cUsage: /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]"
+migration-target-data: "&eThe target %target% currently contains %count% row(s). Continuing will clear %target% data. Continue?"
+migration-confirm-usage: "&eTo confirm, run: &b/papistore migrate %source% %target% confirm"
+migration-complete: "&aMigration to %target% completed. storage.type has been updated; restart the server."
+migration-failed: "&cMigration failed. Source and target data were not partially overwritten. Check the server console."
+migration-no-pending: "&cThere is no pending migration, or the 60-second confirmation window expired."
+reload-usage: "&cUsage: /papistore reload"
+reload-begin: "&6Reloading fields, language files, and player-query settings..."
+reload-done: "&aReload complete. Database, queue, and scheduler setting changes still require a server restart."
+reload-failed: "&cPAPIStore reload failed."
+query-self-usage: "&cUsage: /papistore me"
+mydata-usage: "&cUsage: /mydata"
+self-query-disabled: "&cPlayer self-query commands are disabled on this server."
+failure-reason: "&cReason: &f%reason%"

@@ -1,0 +1,76 @@
+no-permission: "&cУ вас нет разрешения на использование этой команды."
+only-player: "&cЭта команда доступна только игрокам."
+refresh-own-usage: "&3Использование: &b/papistore refresh"
+refresh-own-begin: "&6Обновление ваших сохранённых данных..."
+refresh-own-done: "&aВаши сохранённые данные обновлены."
+refresh-failed: "&cНе удалось обновить данные. Проверьте консоль сервера."
+refresh-cooldown: "&eПодождите %seconds% секунд(ы) перед повторным обновлением."
+admin-command-usage: |
+  &8-&3 /papistore refresh
+  &8-&3 /papistore refresh <игрок>
+  &8-&3 /papistore create <переменная PAPI> <столбец> <отображаемое имя>
+  &8-&3 /papistore generate <столбец/all>
+  &8-&3 /papistore query <игрок/UUID>
+  &8-&3 /papistore me
+  &8-&3 /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]
+  &8-&3 /papistore reload
+  &8-&3 /papistore help
+refresh-other-error: "&cИгрок %player% не в сети."
+refresh-other-begin: "&6Обновление сохранённых данных игрока %player%..."
+refresh-other-done: "&aСохранённые данные игрока %player% обновлены."
+refresh-other-failed: "&cНе удалось обновить данные игрока %player%. Проверьте консоль."
+create-begin: "&6Создание столбца %option% (%papi%)..."
+create-done: "&aСтолбец %option% (%papi%) создан."
+create-failed: "&cНе удалось создать столбец %option%. Проверьте консоль."
+create-invalid-option: "&cНедопустимое имя столбца. Используйте буквы, цифры и подчёркивания; имя должно начинаться с буквы или подчёркивания."
+create-invalid-name: "&cОтображаемое имя должно содержать от 1 до 64 символов."
+generate-option-error: "&cСтолбец %option% не существует."
+generate-option-begin: "&6Создание данных столбца %option% для всех игроков онлайн..."
+generate-option-done: "&aДанные столбца %option% успешно созданы."
+generate-option-failed: "&cНе удалось создать данные столбца %option%. Проверьте консоль."
+generate-all-begin: "&6Создание всех данных для всех игроков онлайн..."
+generate-all-done: "&aВсе данные игроков успешно созданы."
+generate-all-failed: "&cНе удалось создать все данные игроков. Проверьте консоль."
+query-not-found: "&cСохранённые данные PAPI для игрока %player% не найдены."
+query-failed: "&cНе удалось получить данные игрока. Проверьте консоль сервера."
+query-header: "&6Сохранённые данные игрока %player%"
+query-uuid: "&7UUID: &f%uuid%"
+query-updated: "&7Обновлено: &f%updated%"
+query-entry: "&e%field%: &f%value%"
+query-empty: "&7Поля данных не настроены."
+help: |
+  &6&lСправка администратора PAPIStore
+  &e/papistore help
+  &7Показать эту справку.
+  &e/papistore refresh <игрок>
+  &7Обновить сохранённые данные игрока онлайн. Право: papistore.op
+  &e/papistore create <переменная PAPI> <столбец> <отображаемое имя>
+  &7Создать столбец и сохранить выражение PAPI. Значение должно предоставляться PAPI или установленным расширением.
+  &e/papistore generate <столбец>
+  &7Обновить выбранный столбец для всех игроков онлайн.
+  &e/papistore generate all
+  &7Обновить все столбцы для всех игроков онлайн.
+  &e/papistore query <игрок/UUID>
+  &7Показать данные с отображаемыми именами. Право: papistore.query или papistore.op
+  &e/papistore me
+  &7Показать ваши собственные сохранённые данные. Право: papistore.query.self
+  &e/mydata
+  &7Сокращение для /papistore me. Каждую команду можно отдельно включить в config.yml.
+  &e/papistore migrate <источник> <цель>
+  &7Копировать все данные между SQLite и MySQL. Цель очищается только после подтверждения.
+  &e/papistore reload
+  &7Перезагружает fields.yml, языковые файлы и настройки запросов игроков. Изменения базы данных и планировщика по-прежнему требуют перезапуска.
+migration-usage: "&cИспользование: /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]"
+migration-target-data: "&eВ целевой базе %target% сейчас %count% строк. При продолжении данные %target% будут удалены. Продолжить?"
+migration-confirm-usage: "&eДля подтверждения выполните: &b/papistore migrate %source% %target% confirm"
+migration-complete: "&aМиграция в %target% завершена. storage.type обновлён; перезапустите сервер."
+migration-failed: "&cНе удалось выполнить миграцию. Исходные и целевые данные не были частично перезаписаны. Проверьте консоль."
+migration-no-pending: "&cНет ожидающей миграции или истекло 60-секундное окно подтверждения."
+reload-usage: "&cИспользование: /papistore reload"
+reload-begin: "&6Перезагрузка полей, языков и настроек запросов..."
+reload-done: "&aПерезагрузка завершена. Для изменений базы данных, очереди и планировщика всё ещё требуется перезапуск сервера."
+reload-failed: "&cНе удалось перезагрузить PAPIStore."
+query-self-usage: "&cИспользование: /papistore me"
+mydata-usage: "&cИспользование: /mydata"
+self-query-disabled: "&cКоманды самостоятельного просмотра данных отключены."
+failure-reason: "&cПричина: &f%reason%"

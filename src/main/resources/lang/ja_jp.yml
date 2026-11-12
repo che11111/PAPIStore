@@ -1,0 +1,76 @@
+no-permission: "&cこのコマンドを実行する権限がありません。"
+only-player: "&cこのコマンドはプレイヤーのみ使用できます。"
+refresh-own-usage: "&3使用方法: &b/papistore refresh"
+refresh-own-begin: "&6保存データを更新しています..."
+refresh-own-done: "&a保存データを更新しました。"
+refresh-failed: "&cデータを更新できませんでした。サーバーコンソールを確認してください。"
+refresh-cooldown: "&e再度更新するまで %seconds% 秒お待ちください。"
+admin-command-usage: |
+  &8-&3 /papistore refresh
+  &8-&3 /papistore refresh <プレイヤー>
+  &8-&3 /papistore create <PAPI変数> <カラム> <表示名>
+  &8-&3 /papistore generate <カラム/all>
+  &8-&3 /papistore query <プレイヤー/UUID>
+  &8-&3 /papistore me
+  &8-&3 /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]
+  &8-&3 /papistore reload
+  &8-&3 /papistore help
+refresh-other-error: "&cプレイヤー %player% はオンラインではありません。"
+refresh-other-begin: "&6プレイヤー %player% の保存データを更新しています..."
+refresh-other-done: "&aプレイヤー %player% の保存データを更新しました。"
+refresh-other-failed: "&cプレイヤー %player% のデータを更新できませんでした。コンソールを確認してください。"
+create-begin: "&6カラム %option% (%papi%) を作成しています..."
+create-done: "&aカラム %option% (%papi%) を作成しました。"
+create-failed: "&cカラム %option% を作成できませんでした。コンソールを確認してください。"
+create-invalid-option: "&cカラム名が無効です。英数字とアンダースコアのみ使用でき、英字またはアンダースコアで始める必要があります。"
+create-invalid-name: "&c表示名は 1～64 文字で入力してください。"
+generate-option-error: "&cカラム %option% は存在しません。"
+generate-option-begin: "&6オンラインの全プレイヤーのカラム %option% を生成しています..."
+generate-option-done: "&aカラム %option% の生成が完了しました。"
+generate-option-failed: "&cカラム %option% のデータを生成できませんでした。コンソールを確認してください。"
+generate-all-begin: "&6オンラインの全プレイヤーと全カラムのデータを生成しています..."
+generate-all-done: "&aすべてのプレイヤーデータを生成しました。"
+generate-all-failed: "&cプレイヤーデータを生成できませんでした。コンソールを確認してください。"
+query-not-found: "&cプレイヤー %player% の保存済み PAPI データが見つかりません。"
+query-failed: "&cプレイヤーデータを取得できませんでした。サーバーコンソールを確認してください。"
+query-header: "&6プレイヤー %player% の保存データ"
+query-uuid: "&7UUID: &f%uuid%"
+query-updated: "&7更新日時: &f%updated%"
+query-entry: "&e%field%: &f%value%"
+query-empty: "&7設定されたデータ項目はありません。"
+help: |
+  &6&lPAPIStore 管理者ヘルプ
+  &e/papistore help
+  &7このヘルプを表示します。
+  &e/papistore refresh <プレイヤー>
+  &7オンラインプレイヤーの保存データを更新します。権限: papistore.op
+  &e/papistore create <PAPI変数> <カラム> <表示名>
+  &7カラムを作成して PAPI 式を保存します。値は PAPI またはインストール済みの拡張機能から取得する必要があります。
+  &e/papistore generate <カラム>
+  &7すべてのオンラインプレイヤーの指定カラムを更新します。
+  &e/papistore generate all
+  &7すべてのオンラインプレイヤーの全カラムを更新します。
+  &e/papistore query <プレイヤー/UUID>
+  &7表示名を使用して保存データを表示します。権限: papistore.query または papistore.op
+  &e/papistore me
+  &7自分の保存データを表示します。権限: papistore.query.self
+  &e/mydata
+  &7/papistore me のショートカットです。config.yml で個別に有効化できます。
+  &e/papistore migrate <移行元> <移行先>
+  &7SQLite と MySQL の間で全データを移行します。確認後のみ移行先を消去します。
+  &e/papistore reload
+  &7fields.yml、言語ファイル、プレイヤー照会設定を再読み込みします。データベースとスケジューラ設定の変更には再起動が必要です。
+migration-usage: "&c使用方法: /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]"
+migration-target-data: "&e移行先 %target% には現在 %count% 行あります。続行すると %target% のデータを消去します。続行しますか？"
+migration-confirm-usage: "&e確認するには実行してください: &b/papistore migrate %source% %target% confirm"
+migration-complete: "&a%target% への移行が完了しました。storage.type を更新したため、サーバーを再起動してください。"
+migration-failed: "&c移行に失敗しました。移行元と移行先のデータは部分上書きされていません。コンソールを確認してください。"
+migration-no-pending: "&c確認待ちの移行がないか、60 秒の確認期限が切れています。"
+reload-usage: "&c使用方法: /papistore reload"
+reload-begin: "&6フィールド、言語、プレイヤー照会設定を再読み込みしています..."
+reload-done: "&a再読み込みが完了しました。データベース、キュー、スケジューラ設定の変更にはサーバーの再起動が必要です。"
+reload-failed: "&c再読み込みに失敗しました。"
+query-self-usage: "&c使用方法: /papistore me"
+mydata-usage: "&c使用方法: /mydata"
+self-query-disabled: "&cプレイヤー用の自己データ確認コマンドは無効です。"
+failure-reason: "&c理由：&f%reason%"

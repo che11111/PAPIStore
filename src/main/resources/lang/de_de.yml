@@ -1,0 +1,76 @@
+no-permission: "&cDu hast keine Berechtigung für diesen Befehl."
+only-player: "&cDieser Befehl kann nur von Spielern verwendet werden."
+refresh-own-usage: "&3Verwendung: &b/papistore refresh"
+refresh-own-begin: "&6Deine gespeicherten Daten werden aktualisiert..."
+refresh-own-done: "&aDeine gespeicherten Daten wurden aktualisiert."
+refresh-failed: "&cDeine Daten konnten nicht aktualisiert werden. Prüfe die Serverkonsole."
+refresh-cooldown: "&eBitte warte %seconds% Sekunde(n), bevor du erneut aktualisierst."
+admin-command-usage: |
+  &8-&3 /papistore refresh
+  &8-&3 /papistore refresh <Spieler>
+  &8-&3 /papistore create <PAPI-Variable> <Spalte> <Anzeigename>
+  &8-&3 /papistore generate <Spalte/all>
+  &8-&3 /papistore query <Spieler/UUID>
+  &8-&3 /papistore me
+  &8-&3 /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]
+  &8-&3 /papistore reload
+  &8-&3 /papistore help
+refresh-other-error: "&cDer Spieler %player% ist nicht online."
+refresh-other-begin: "&6Die gespeicherten Daten von %player% werden aktualisiert..."
+refresh-other-done: "&aDie gespeicherten Daten von %player% wurden aktualisiert."
+refresh-other-failed: "&cDie Daten von %player% konnten nicht aktualisiert werden. Prüfe die Konsole."
+create-begin: "&6Spalte %option% (%papi%) wird erstellt..."
+create-done: "&aSpalte %option% (%papi%) wurde erstellt."
+create-failed: "&cSpalte %option% konnte nicht erstellt werden. Prüfe die Konsole."
+create-invalid-option: "&cUngültiger Spaltenname. Verwende nur Buchstaben, Zahlen und Unterstriche, beginnend mit einem Buchstaben oder Unterstrich."
+create-invalid-name: "&cDer Anzeigename muss zwischen 1 und 64 Zeichen lang sein."
+generate-option-error: "&cDie Spalte %option% existiert nicht."
+generate-option-begin: "&6Daten der Spalte %option% werden für alle Online-Spieler erzeugt..."
+generate-option-done: "&aDie Daten der Spalte %option% wurden erzeugt."
+generate-option-failed: "&cDie Daten der Spalte %option% konnten nicht erzeugt werden. Prüfe die Konsole."
+generate-all-begin: "&6Alle Daten für alle Online-Spieler und Spalten werden erzeugt..."
+generate-all-done: "&aAlle Spielerdaten wurden erzeugt."
+generate-all-failed: "&cDie Spielerdaten konnten nicht erzeugt werden. Prüfe die Konsole."
+query-not-found: "&cFür %player% wurden keine gespeicherten PAPI-Daten gefunden."
+query-failed: "&cDie Spielerdaten konnten nicht abgefragt werden. Prüfe die Serverkonsole."
+query-header: "&6Gespeicherte Daten für %player%"
+query-uuid: "&7UUID: &f%uuid%"
+query-updated: "&7Aktualisiert: &f%updated%"
+query-entry: "&e%field%: &f%value%"
+query-empty: "&7Es sind keine Datenfelder konfiguriert."
+help: |
+  &6&lPAPIStore Administrator-Hilfe
+  &e/papistore help
+  &7Zeigt diese Hilfe an.
+  &e/papistore refresh <Spieler>
+  &7Aktualisiert die gespeicherten Daten eines Online-Spielers. Berechtigung: papistore.op
+  &e/papistore create <PAPI-Variable> <Spalte> <Anzeigename>
+  &7Erstellt eine Spalte und speichert den PAPI-Ausdruck. Der Wert muss von PAPI oder einer installierten Erweiterung stammen.
+  &e/papistore generate <Spalte>
+  &7Aktualisiert eine konfigurierte Spalte für alle Online-Spieler.
+  &e/papistore generate all
+  &7Aktualisiert alle Spalten für alle Online-Spieler.
+  &e/papistore query <Spieler/UUID>
+  &7Zeigt gespeicherte Daten mit Anzeigenamen. Berechtigung: papistore.query oder papistore.op
+  &e/papistore me
+  &7Zeigt deine eigenen gespeicherten Daten. Berechtigung: papistore.query.self
+  &e/mydata
+  &7Kurzform von /papistore me. Beide Befehle lassen sich in config.yml getrennt aktivieren.
+  &e/papistore migrate <Quelle> <Ziel>
+  &7Kopiert alle Daten zwischen SQLite und MySQL. Das Ziel wird erst nach Bestätigung geleert.
+  &e/papistore reload
+  &7Lädt fields.yml, Sprachdateien und Spielerabfrage-Einstellungen neu. Datenbank- und Scheduler-Einstellungen benötigen weiterhin einen Neustart.
+migration-usage: "&cVerwendung: /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]"
+migration-target-data: "&eDas Ziel %target% enthält derzeit %count% Zeile(n). Beim Fortfahren werden die Daten in %target% gelöscht. Fortfahren?"
+migration-confirm-usage: "&eZum Bestätigen ausführen: &b/papistore migrate %source% %target% confirm"
+migration-complete: "&aMigration nach %target% abgeschlossen. storage.type wurde aktualisiert; starte den Server neu."
+migration-failed: "&cMigration fehlgeschlagen. Quell- und Zieldaten wurden nicht teilweise überschrieben. Prüfe die Konsole."
+migration-no-pending: "&cEs gibt keine ausstehende Migration oder das 60-Sekunden-Zeitfenster ist abgelaufen."
+reload-usage: "&cVerwendung: /papistore reload"
+reload-begin: "&6Felder, Sprachdateien und Spielerabfrage-Einstellungen werden neu geladen..."
+reload-done: "&aNeuladen abgeschlossen. Änderungen an Datenbank, Warteschlange und Scheduler benötigen weiterhin einen Serverneustart."
+reload-failed: "&cNeuladen fehlgeschlagen."
+query-self-usage: "&cVerwendung: /papistore me"
+mydata-usage: "&cVerwendung: /mydata"
+self-query-disabled: "&cDie Selbstabfrage-Befehle für Spieler sind deaktiviert."
+failure-reason: "&cGrund: &f%reason%"

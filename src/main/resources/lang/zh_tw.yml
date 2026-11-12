@@ -1,0 +1,76 @@
+no-permission: "&c你沒有權限執行此指令。"
+only-player: "&c此指令只能由玩家執行。"
+refresh-own-usage: "&3用法：&b/papistore refresh"
+refresh-own-begin: "&6正在重新整理你的資料..."
+refresh-own-done: "&a你的資料已重新整理。"
+refresh-failed: "&c重新整理資料失敗，請查看伺服器主控台。"
+refresh-cooldown: "&e請等待 %seconds% 秒後再重新整理。"
+admin-command-usage: |
+  &8-&3 /papistore refresh
+  &8-&3 /papistore refresh <玩家>
+  &8-&3 /papistore create <PAPI變數> <欄位> <備註名稱>
+  &8-&3 /papistore generate <欄位/all>
+  &8-&3 /papistore query <玩家/UUID>
+  &8-&3 /papistore me
+  &8-&3 /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]
+  &8-&3 /papistore reload
+  &8-&3 /papistore help
+refresh-other-error: "&c玩家 %player% 不在線上。"
+refresh-other-begin: "&6正在重新整理玩家 %player% 的資料..."
+refresh-other-done: "&a玩家 %player% 的資料已重新整理。"
+refresh-other-failed: "&c重新整理玩家 %player% 的資料失敗，請查看伺服器主控台。"
+create-begin: "&6正在建立欄位 %option% (%papi%)..."
+create-done: "&a欄位 %option% (%papi%) 已建立。"
+create-failed: "&c建立欄位 %option% 失敗，請查看伺服器主控台。"
+create-invalid-option: "&c欄位名稱無效。只能使用字母、數字與底線，且必須以字母或底線開頭。"
+create-invalid-name: "&c備註名稱長度必須為 1 到 64 個字元。"
+generate-option-error: "&c欄位 %option% 不存在。"
+generate-option-begin: "&6正在為所有線上玩家產生欄位 %option% 的資料..."
+generate-option-done: "&a欄位 %option% 的資料已產生完畢。"
+generate-option-failed: "&c產生欄位 %option% 的資料失敗，請查看伺服器主控台。"
+generate-all-begin: "&6正在為所有線上玩家產生全部欄位的資料..."
+generate-all-done: "&a所有玩家資料已產生完畢。"
+generate-all-failed: "&c產生所有玩家資料失敗，請查看伺服器主控台。"
+query-not-found: "&c找不到玩家 %player% 的已儲存 PAPI 資料。"
+query-failed: "&c查詢玩家資料失敗，請查看伺服器主控台。"
+query-header: "&6玩家 %player% 的已儲存資料"
+query-uuid: "&7UUID：&f%uuid%"
+query-updated: "&7更新時間：&f%updated%"
+query-entry: "&e%field%：&f%value%"
+query-empty: "&7沒有設定任何資料欄位。"
+help: |
+  &6&lPAPIStore 管理員說明
+  &e/papistore help
+  &7顯示此說明頁面。
+  &e/papistore refresh <玩家>
+  &7重新整理指定線上玩家的已儲存資料。權限：papistore.op
+  &e/papistore create <PAPI變數> <欄位> <備註名稱>
+  &7建立資料庫欄位並儲存 PAPI 表達式。變數必須由 PAPI 核心或已安裝的擴充套件提供。
+  &e/papistore generate <欄位>
+  &7為所有線上玩家重新整理指定欄位。
+  &e/papistore generate all
+  &7為所有線上玩家重新整理全部欄位。
+  &e/papistore query <玩家/UUID>
+  &7使用備註名稱顯示玩家已儲存的資料。權限：papistore.query 或 papistore.op
+  &e/papistore me
+  &7查詢自己的已儲存資料。權限：papistore.query.self
+  &e/mydata
+  &7/papistore me 的快速指令，可在 config.yml 中分別開啟或關閉。
+  &e/papistore migrate <來源類型> <目標類型>
+  &7在 SQLite 和 MySQL 之間遷移全部資料。只有確認後才會清空目標資料。
+  &e/papistore reload
+  &7重新載入 fields.yml、語言檔案與玩家查詢開關。資料庫連線與排程參數仍需重新啟動。
+migration-usage: "&c用法：/papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]"
+migration-target-data: "&e目前 %target% 內有 %count% 筆資料。繼續遷移前會清空 %target% 資料，是否繼續？"
+migration-confirm-usage: "&e確認遷移請執行：&b/papistore migrate %source% %target% confirm"
+migration-complete: "&a已遷移到 %target%，storage.type 已更新，請重新啟動伺服器。"
+migration-failed: "&c遷移失敗。來源與目標資料均未被部分覆寫，請查看伺服器主控台。"
+migration-no-pending: "&c沒有可確認的遷移，或 60 秒確認時間已過期。"
+reload-usage: "&c用法：/papistore reload"
+reload-begin: "&6正在重新載入欄位、語言與玩家查詢設定..."
+reload-done: "&a重新載入完成。資料庫連線、佇列與排程參數變更仍需重新啟動伺服器。"
+reload-failed: "&c重新載入失敗。"
+query-self-usage: "&c用法：/papistore me"
+mydata-usage: "&c用法：/mydata"
+self-query-disabled: "&c伺服器已關閉玩家自助查詢指令。"
+failure-reason: "&c原因：&f%reason%"

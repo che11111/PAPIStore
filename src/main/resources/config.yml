@@ -1,32 +1,50 @@
-#仅支持MySQL数据库
+# 自动根据玩家客户端语言选择；无法识别时使用英语。
+# Auto-select by player client locale; fall back to English when unknown.
+language: auto
+
+storage:
+  # SQLite 使用服务端提供的 org.sqlite.JDBC，驱动不随插件打包。
+  # SQLite uses the server-provided org.sqlite.JDBC driver; it is not bundled.
+  # 存储类型可选 sqlite 或 mysql；修改后需要重启服务器。
+  # Storage type: sqlite or mysql. A server restart is required after changing it.
+  type: sqlite
+  sqlite:
+    file: "papi_store.db"
+    table: "papi_store"
+
 mysql:
   user: root
   password: "PleaseInput"
   address: 127.0.0.1
   port: 3306
+  # 远程数据库建议启用 SSL，并尽量关闭 allowPublicKeyRetrieval。
+  # For remote databases, enable SSL and disable allowPublicKeyRetrieval when possible.
   useSSL: false
   database: "minecraft"
   table: "papi_mysql"
   allowPublicKeyRetrieval: true
+  connectTimeout: 5000
+  socketTimeout: 10000
 
-message:
-  no-permission: "&c你没有权限执行此指令."
-  only-player: "&c此命令不可在控制台执行."
-  refresh-own-usage: "&3Usage: &b/papistore refresh"
-  refresh-own-begin: "&6已开始刷新个人数据..."
-  refresh-own-done: "&a个人数据已刷新!"
-  admin-command-usage: |
-    &8-&3 /papistore refresh
-    &8-&3 /papistore refresh <玩家>
-    &8-&3 /papistore create <PAPI变量> <列名>
-    &8-&3 /papistore generate <列名/all>
-  refresh-other-error: "&c玩家 %player% 不存在."
-  refresh-other-begin: "&6已开始刷新 %player% 的玩家数据..."
-  refresh-other-done: "&a%player% 的玩家数据已刷新!"
-  create-begin: "&6正在创建一个新的列 %option% (%papi%) ..."
-  create-done: "&a列 %option% (%papi%) 已创建完毕!"
-  generate-option-error: "&c指定的列 %option% 不存在."
-  generate-option-begin: "&6正在生成 %option% 的所有在线玩家数据..."
-  generate-option-done: "&a%option% 的所有在线玩家数据已生成完毕!"
-  generate-all-begin: "&6正在生成所有列的所有在线玩家数据..."
-  generate-all-done: "&a所有列的所有在线玩家数据已生成完毕!"
+settings:
+  refresh-cooldown-seconds: 10
+  # Spigot/Paper 的单批大小，也是 Folia 单批并发区域任务上限。
+  # Spigot/Paper batch size and the maximum concurrent Folia region tasks.
+  players-per-tick: 20
+  # Spigot/Paper 每批 PAPI 渲染最多占用的时间，避免一次采集过多玩家。
+  # Maximum time spent rendering one Spigot/Paper batch in milliseconds.
+  render-time-budget-millis: 10
+  # 数据库异步队列上限；满载时新刷新会快速失败，避免无限积压。
+  # Maximum queued database tasks; new refreshes fail fast when full.
+  database-queue-capacity: 512
+  # 插件启动等待数据库就绪的最长时间，范围 5-60 秒。
+  # Maximum startup wait for database readiness; clamped to 5-60 seconds.
+  startup-timeout-seconds: 20
+
+player-query:
+  # 是否允许玩家使用 /papistore me 查询自己的数据。
+  # Whether players can use /papistore me to query their own stored data.
+  enable-papistore-me: true
+  # 是否启用 /mydata 快捷指令；关闭后该指令会提示功能已禁用。
+  # Whether to enable the /mydata shortcut for /papistore me.
+  enable-mydata: true

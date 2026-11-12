@@ -1,13 +1,15 @@
 name: PAPIStore
 version: '${project.version}'
-main: cn.che1sbukkit.papistore.papistore
-api-version: '1.13'
+main: dev.che1s.papistore.PapiStorePlugin
 author: che1s
+folia-supported: true
 depend: [ PlaceholderAPI ]
 
 commands:
   papistore:
     description: Main command.
+  mydata:
+    description: 查询自己的 PAPIStore 数据.
 
 permissions:
   papistore.refresh:
@@ -16,3 +18,9 @@ permissions:
   papistore.op:
     description: 管理员权限.
     default: op
+  papistore.query:
+    description: 查询玩家已存储的 PAPI 数据.
+    default: op
+  papistore.query.self:
+    description: 查询自己的已存储 PAPI 数据.
+    default: true

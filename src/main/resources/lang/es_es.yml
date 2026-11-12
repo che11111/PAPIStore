@@ -1,0 +1,76 @@
+no-permission: "&cNo tienes permiso para usar este comando."
+only-player: "&cEste comando solo puede usarlo un jugador."
+refresh-own-usage: "&3Uso: &b/papistore refresh"
+refresh-own-begin: "&6Actualizando tus datos guardados..."
+refresh-own-done: "&aTus datos guardados se han actualizado."
+refresh-failed: "&cNo se pudieron actualizar tus datos. Revisa la consola del servidor."
+refresh-cooldown: "&eEspera %seconds% segundo(s) antes de volver a actualizar."
+admin-command-usage: |
+  &8-&3 /papistore refresh
+  &8-&3 /papistore refresh <jugador>
+  &8-&3 /papistore create <variable PAPI> <columna> <nombre visible>
+  &8-&3 /papistore generate <columna/all>
+  &8-&3 /papistore query <jugador/UUID>
+  &8-&3 /papistore me
+  &8-&3 /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]
+  &8-&3 /papistore reload
+  &8-&3 /papistore help
+refresh-other-error: "&cEl jugador %player% no está en línea."
+refresh-other-begin: "&6Actualizando los datos guardados de %player%..."
+refresh-other-done: "&aLos datos guardados de %player% se han actualizado."
+refresh-other-failed: "&cNo se pudieron actualizar los datos de %player%. Revisa la consola."
+create-begin: "&6Creando la columna %option% (%papi%)..."
+create-done: "&aLa columna %option% (%papi%) se ha creado."
+create-failed: "&cNo se pudo crear la columna %option%. Revisa la consola."
+create-invalid-option: "&cNombre de columna no válido. Usa solo letras, números y guiones bajos, comenzando por una letra o guion bajo."
+create-invalid-name: "&cEl nombre visible debe tener entre 1 y 64 caracteres."
+generate-option-error: "&cLa columna %option% no existe."
+generate-option-begin: "&6Generando los datos de la columna %option% para todos los jugadores en línea..."
+generate-option-done: "&aLa generación de la columna %option% ha terminado."
+generate-option-failed: "&cNo se pudieron generar los datos de la columna %option%. Revisa la consola."
+generate-all-begin: "&6Generando todos los datos de todos los jugadores en línea..."
+generate-all-done: "&aSe han generado todos los datos de los jugadores."
+generate-all-failed: "&cNo se pudieron generar todos los datos de los jugadores. Revisa la consola."
+query-not-found: "&cNo se encontraron datos PAPI guardados para %player%."
+query-failed: "&cNo se pudieron consultar los datos del jugador. Revisa la consola del servidor."
+query-header: "&6Datos guardados de %player%"
+query-uuid: "&7UUID: &f%uuid%"
+query-updated: "&7Actualizado: &f%updated%"
+query-entry: "&e%field%: &f%value%"
+query-empty: "&7No hay campos de datos configurados."
+help: |
+  &6&lAyuda de administrador de PAPIStore
+  &e/papistore help
+  &7Muestra esta página de ayuda.
+  &e/papistore refresh <jugador>
+  &7Actualiza los datos guardados de un jugador en línea. Permiso: papistore.op
+  &e/papistore create <variable PAPI> <columna> <nombre visible>
+  &7Crea una columna y guarda la expresión PAPI. El valor debe provenir de PAPI o de una expansión instalada.
+  &e/papistore generate <columna>
+  &7Actualiza una columna configurada para todos los jugadores en línea.
+  &e/papistore generate all
+  &7Actualiza todas las columnas para todos los jugadores en línea.
+  &e/papistore query <jugador/UUID>
+  &7Muestra los datos con nombres visibles. Permiso: papistore.query o papistore.op
+  &e/papistore me
+  &7Muestra tus propios datos guardados. Permiso: papistore.query.self
+  &e/mydata
+  &7Atajo de /papistore me. Cada comando puede activarse por separado en config.yml.
+  &e/papistore migrate <origen> <destino>
+  &7Copia todos los datos entre SQLite y MySQL. El destino solo se vacía tras confirmar.
+  &e/papistore reload
+  &7Recarga fields.yml, los archivos de idioma y las opciones de consulta. Los ajustes de base de datos y planificación aún requieren reiniciar.
+migration-usage: "&cUso: /papistore migrate <sqlite|mysql> <sqlite|mysql> [confirm]"
+migration-target-data: "&eEl destino %target% contiene actualmente %count% fila(s). Si continúas, se borrarán los datos de %target%. ¿Continuar?"
+migration-confirm-usage: "&ePara confirmar, ejecuta: &b/papistore migrate %source% %target% confirm"
+migration-complete: "&aMigración a %target% completada. storage.type se ha actualizado; reinicia el servidor."
+migration-failed: "&cLa migración falló. Los datos de origen y destino no se sobrescribieron parcialmente. Revisa la consola."
+migration-no-pending: "&cNo hay una migración pendiente o el plazo de confirmación de 60 segundos ha caducado."
+reload-usage: "&cUso: /papistore reload"
+reload-begin: "&6Recargando campos, idiomas y opciones de consulta..."
+reload-done: "&aRecarga completada. Los cambios de base de datos, cola y planificación aún requieren reiniciar el servidor."
+reload-failed: "&cNo se pudo recargar."
+query-self-usage: "&cUso: /papistore me"
+mydata-usage: "&cUso: /mydata"
+self-query-disabled: "&cLos comandos de consulta personal están desactivados."
+failure-reason: "&cMotivo: &f%reason%"
